@@ -1,4 +1,4 @@
-# PowerShell Script to set the size of pagefile.sys
+# Sets the size of pagefile.sys
 
 $computersys = Get-WmiObject Win32_ComputerSystem -EnableAllPrivileges;
 $computersys.AutomaticManagedPagefile = $False;
