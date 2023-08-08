@@ -4,8 +4,10 @@
 $RegistryPath = 'HKLM:\Software\SolidWorks\Applications\PDMWorks Enterprise\'
 $Name = 'PTID'
 $Value = '{05AD35C4-8A9A-4114-B51F-32186222ABA1}'
-$Process = Get-Process EdmServer -ErrorAction SilentlyContinue
+
 Set-ItemProperty -Path $RegistryPath -Name $Name -Value $Value -Force
+
+$Process = Get-Process EdmServer -ErrorAction SilentlyContinue
 
 If ($Process) {
     Write-Host "Stopping EdmServer..."
